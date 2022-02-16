@@ -1,0 +1,24 @@
+<div class="container">
+  Seleccione curso:
+  <select name="tematica" id="tematica" [(ngModel)]="tematica">
+
+    <option *ngFor="let t of tematicas" value="{{t}}">{{t}}</option>
+  </select>
+  <br>
+  <input type="button" (click)="getCursosPorTematica()" value="Buscar"><br><br>
+  <br>
+    <table class="table table-striped" >
+    <thead>
+      <tr>
+      <th scope="col">Denominacion</th>
+      <th scope="col">Duracion</th>
+      </tr>
+    </thead>
+    <tbody >
+        <tr *ngFor="let c of cursos">
+          <td>{{c.denominacion}}</td>
+          <td>{{c.duracion}}</td>
+          </tr>
+    </tbody>
+    </table>
+
